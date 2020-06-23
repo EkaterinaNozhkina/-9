@@ -1,0 +1,102 @@
+1.public interface InterfaceCalc
+{
+    
+    void Put_A(double a); 
+ 
+    void Clear_A();
+ 
+    double Multiplication(double b);
+ 
+    double Division(double b);
+ 
+    double Sum(double b);
+ 
+    double Subtraction(double b); 
+ 
+    double SqrtX(double b);
+ 
+    double DegreeY(double b);
+ 
+    double Sqrt();
+ 
+    double Square();
+ 
+    double Factorial();
+ 
+    double MemoryShow(); 
+ 
+    void Memory_Clear(); 
+ 
+    
+    void M_Multiplication(double b);
+ 
+    void M_Division(double b);
+ 
+    void M_Sum(double b);
+ 
+    void M_Subtraction(double b); 
+}
+2.class QuadraticEquation
+{
+    public double a, b, c;
+
+    
+    public QuadraticEquation(double _a, double _b, double _c)
+    {
+        if (IsSolution(a, b, c))
+        {
+            a = _a;
+            b = _b;
+            c = _c;
+        }
+        else
+            a = b = c = 0;
+    }
+
+    
+    bool IsSolution(double a, double b, double c)
+    {
+        double d = b * b - 4 * a * c;
+        if (d < 0) return false;
+            return true;
+    }
+
+   
+    public bool Calc(ref double x1, ref double x2)
+    {
+        
+        if (!IsSolution(a, b, c))
+            return false;
+
+        
+        double d = b * b - 4 * a * c;
+        x1 = (-b - Math.Sqrt(d)) / (2 * a);
+        x2 = (-b + Math.Sqrt(d)) / (2 * a);
+
+        return true;
+    }
+}
+3.#include <iostream>
+#include <math.h>
+ 
+using namespace std;
+ 
+int main(){
+  float a=0,b=0,c=0,D=0;
+  cout << "Enter a:";
+  cin >> a;
+  cout << "Enter b:";
+  cin >> b;
+  cout << "Enter c:";
+  cin >> c;
+  D = pow(b,2) - 4*a*c;
+  cout << "D:" << D << endl;
+  float y1 = (-1 * b + sqrt(D)) / (2.0*a);
+  float y2 = (-1 * b - sqrt(D)) / (2.0*a);
+ 
+  cout << "Y1 = " << y1 << endl;
+  cout << "Y2 = " << y2 << endl;
+ 
+  cout << "X1 = " << sqrt(y1) << " X2 = " << sqrt(y1)*-1
+    << " X3 = " << sqrt(y2) << " X4 = " << sqrt(y2)*-1 << endl;
+}
